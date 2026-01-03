@@ -14,6 +14,11 @@
         --spacing-xl: 2rem;
     }
 
+    /* Reduce vertical spacing on mobile */
+    section {
+        padding: 60px 0;
+    }
+    
     /* Navigation */
     .nav-menu {
         position: fixed;

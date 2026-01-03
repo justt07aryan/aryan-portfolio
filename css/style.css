@@ -98,6 +98,20 @@ ul {
     padding: 0 var(--spacing-md);
 }
 
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- Section Vertical Spacing ---------- */
+section {
+  padding: 90px 0;
+}
+
 /* ============================================
    Header & Navigation
    ============================================ */
