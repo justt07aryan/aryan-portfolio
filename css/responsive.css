@@ -1,0 +1,300 @@
+/* ============================================
+   Responsive Design (Mobile-First Approach)
+   ============================================ */
+
+/* ============================================
+   Tablet Devices (768px and below)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    :root {
+        --font-size-4xl: 2.5rem;
+        --font-size-3xl: 2rem;
+        --font-size-2xl: 1.25rem;
+        --spacing-2xl: 3rem;
+        --spacing-xl: 2rem;
+    }
+
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-base);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-lg) 0;
+        gap: var(--spacing-md);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Home Section */
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-text {
+        order: 2;
+    }
+
+    .home-image {
+        order: 1;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .image-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .home-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .home-subtitle {
+        font-size: var(--font-size-xl);
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+
+    .home-social {
+        justify-content: center;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: 1;
+    }
+
+    .about-text {
+        order: 2;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        order: 2;
+    }
+
+    .contact-form-wrapper {
+        order: 1;
+    }
+}
+
+/* ============================================
+   Mobile Devices (480px and below)
+   ============================================ */
+@media screen and (max-width: 480px) {
+    :root {
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.75rem;
+        --font-size-2xl: 1.125rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Navigation */
+    .nav-logo a {
+        font-size: var(--font-size-lg);
+    }
+
+    .nav-menu {
+        top: 60px;
+    }
+
+    /* Home Section */
+    .home {
+        padding-top: 60px;
+    }
+
+    .home-container {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .home-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .home-subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .home-description {
+        font-size: var(--font-size-base);
+    }
+
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .section-description {
+        font-size: var(--font-size-base);
+    }
+
+    /* About Section */
+    .about-img {
+        max-width: 100%;
+    }
+
+    /* Skills */
+    .skill-card {
+        padding: var(--spacing-md);
+    }
+
+    .skill-icon {
+        font-size: var(--font-size-3xl);
+    }
+
+    /* Projects */
+    .project-image {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: var(--spacing-md);
+    }
+
+    /* Contact Form */
+    .contact-form-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Scroll to Top */
+    .scroll-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ============================================
+   Large Desktop Devices (1400px and above)
+   ============================================ */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .home-content {
+        gap: var(--spacing-2xl);
+    }
+
+    .image-wrapper {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* ============================================
+   Landscape Mobile Devices
+   ============================================ */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .home {
+        min-height: auto;
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    .header,
+    .nav-toggle,
+    .scroll-top,
+    .contact-form-wrapper {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+}
+
+
+
+
