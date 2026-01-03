@@ -156,65 +156,14 @@ function showFormMessage(message, type) {
 // Form Submission Handler
 // ============================================
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Validate form
+    contactForm.addEventListener('submit', (e) => {
         if (!validateForm()) {
+            e.preventDefault(); // block ONLY if invalid
             showFormMessage('Please fix the errors in the form', 'error');
             return;
         }
 
-        // Show loading state
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
-        // Get form data
-        const formData = {
-            name: nameInput.value.trim(),
-            email: emailInput.value.trim(),
-            subject: subjectInput.value.trim(),
-            message: messageInput.value.trim()
-        };
-
-        try {
-            // Simulate form submission (replace with actual API endpoint)
-            // For now, we'll use a free service or show success message
-            
-            // Option 1: Using Formspree (Free service - replace with your endpoint)
-            // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(formData)
-            // });
-
-            // Option 2: Using EmailJS (Free service - requires setup)
-            // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-            //     .then(() => { ... });
-
-            // Option 3: For demonstration - simulate success
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Show success message
-            showFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            contactForm.reset();
-            formInputs.forEach(input => {
-                input.classList.remove('error');
-                document.getElementById(`${input.id}-error`).style.display = 'none';
-            });
-
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showFormMessage('Oops! Something went wrong. Please try again later or contact me directly.', 'error');
-        } finally {
-            // Remove loading state
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-        }
+        // ✅ allow normal form submission to Formspree
     });
 }
 
