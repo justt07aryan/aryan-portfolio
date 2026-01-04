@@ -240,8 +240,13 @@ section {
 .home-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: var(--spacing-2xl);
     min-height: 80vh;
+}
+
+.home-text {
+    flex: 1;
+    padding-right: var(--spacing-xl);
 }
 
 .home-text-full {
@@ -283,15 +288,11 @@ section {
     color: var(--text-light);
     line-height: 1.7;
     margin-bottom: var(--spacing-xl);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .home-buttons {
     display: flex;
     gap: var(--spacing-md);
-    justify-content: center;
     margin-bottom: var(--spacing-xl);
     flex-wrap: wrap;
 }
@@ -299,7 +300,6 @@ section {
 .home-social {
     display: flex;
     gap: var(--spacing-md);
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -325,11 +325,6 @@ section {
 }
 
 /* Legacy home styles for backward compatibility */
-.home-text {
-    flex: 1;
-    padding-right: var(--spacing-xl);
-}
-
 .home-image {
     flex: 1;
     display: flex;
@@ -339,17 +334,33 @@ section {
 
 .image-wrapper {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    transition: var(--transition-base);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: var(--transition-base);
+    filter: brightness(1.02) contrast(1.01);
+}
+
+.image-wrapper:hover .profile-img {
+    transform: scale(1.08);
+    filter: brightness(1.05) contrast(1.03);
 }
 
 .image-overlay {
@@ -358,7 +369,9 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+    opacity: 0;
+    transition: opacity var(--transition-base);
     pointer-events: none;
 }
 
